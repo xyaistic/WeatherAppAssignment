@@ -83,7 +83,7 @@ const Home: React.FC = () => {
   useEffect(() => {
     getWeather('Bangalore');
   }, []);
-  
+
 
   useFocusEffect(
     useCallback(() => {
@@ -164,7 +164,6 @@ const Home: React.FC = () => {
       >
         <StatusBar barStyle="light-content" />
         <View className="flex-1 justify-center items-center p-5">
-          <Ionicons name="refresh-circle" size={60} color="white" />
           <Text className="text-white text-lg font-semibold mt-4 text-center">
             Loading Weather Data...
           </Text>
@@ -186,26 +185,24 @@ const Home: React.FC = () => {
       end={{ x: 1, y: 1 }}
     >
       <StatusBar barStyle="light-content" />
-      <SafeAreaView className="flex-1">
-        <View className="flex-row items-center justify-between p-5">
-          <View className="flex-1 flex-row items-center bg-white/20 rounded-2xl px-4 py-3 mr-3">
+      <SafeAreaView className="flex-1 p-5">
+        <View className="flex-row items-center justify-between p-5 mt-8">
+          <View className="flex-1 flex-row items-center bg-white/20 rounded-2xl px-4 mr-3">
             <Ionicons name="search" size={20} color="white" style={{ opacity: 0.8 }} />
             <TextInput
-              className="flex-1 text-white text-base font-medium ml-3 px-4 h-5"
+              className="flex-1 text-black text-lg font-medium ml-3 px-4"
               placeholder="Search for a city..."
-              placeholderTextColor="rgba(255, 255, 255, 0.7)"
+              placeholderTextColor="rgba(0, 0, 0, 0.5)"  // Make the placeholder visible with a transparent black color
               value={searchQuery}
               onChangeText={setSearchQuery}
               onSubmitEditing={handleSearchSubmit}
               returnKeyType="search"
               autoCapitalize="words"
               autoCorrect={false}
+              style={{ height: 40 }}  // Adjusting height for better input area and placeholder visibility
             />
             {searchQuery.length > 0 && (
-              <TouchableOpacity
-                onPress={() => setSearchQuery('')}
-                className="ml-2"
-              >
+              <TouchableOpacity onPress={() => setSearchQuery('')} className="ml-2">
                 <Ionicons name="close-circle" size={20} color="white" style={{ opacity: 0.8 }} />
               </TouchableOpacity>
             )}
@@ -224,6 +221,7 @@ const Home: React.FC = () => {
             />
           </TouchableOpacity>
         </View>
+
 
         <ScrollView
           className="flex-1"

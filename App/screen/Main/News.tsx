@@ -97,18 +97,18 @@ export default function News() {
       <View className="flex-1 bg-gray-100">
         <SafeAreaView className='flex-1 bg-white'>
 
-          <View className='flex-row items-center justify-between px-4 py-3 border-b border-gray-200'>
+          <View className='flex-row items-center justify-between mt-5 px-4 py-3 border-b border-gray-200'>
             <Text className="text-2xl font-bold text-center">
               Latest News
             </Text>
           </View>
 
-          <View className="flex-row items-center border rounded-2xl px-4 py-3 mx-4 my-4 border-gray-300">
+          <View className="flex-row items-center border rounded-2xl px-4 mx-4 my-4 border-gray-300">
             <Ionicons name="search" size={20} color="gray" style={{ opacity: 0.8 }} />
             <TextInput
-              className="flex-1 text-b text-base font-medium ml-3 px-4 h-7"
+              className="flex-1 text-black text-lg font-medium ml-3 px-4"
               placeholder="Search News..."
-              placeholderTextColor="gray"
+              placeholderTextColor="text-black"
               placeholderClassName='p-3'
               value={searchQuery}
               onChangeText={setSearchQuery}
